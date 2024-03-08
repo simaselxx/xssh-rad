@@ -3986,14 +3986,9 @@ def text_private(bot, message):
                 if host in hosts:
                     port, username, password, panel, route_path, sshport, udgpw, remark = sshx.HOST_INFO(host)
                     delete_cache(chat_id)
-                    if panel == "shahan":
-                        cache_list = [host, username, "80"]
-                        add_cache(chat_id, "EDUSPA")
-                        message.reply_text("پسورد بفرستین")
-                    else:
-                        cache_list = [host, username]
-                        add_cache(chat_id, "EDPPort")
-                        message.reply_text("⚪️ پورت پنلو بفرستین:")
+                    cache_list = [host, username]
+                    add_cache(chat_id, "EDPPort")
+                    message.reply_text("⚪️ پورت پنلو بفرستین:")
                     add_collector(chat_id, "EUP", cache_list, [])
                 else:
                     message.reply_text("سرور وجود نداره")
@@ -4044,14 +4039,9 @@ def text_private(bot, message):
                 hosts, remarks = sshx.HOSTS()
                 if old_host in hosts:
                     delete_cache(chat_id)
-                    if panel == "shahan":
-                        cache_list = [old_host, panel, new_host, "80", "path", "sshport", "udgpw"]
-                        add_cache(chat_id, "AllEditremark")
-                        message.reply_text("یه نام برای سرور بفرستین مثل (آمریکا-1 🇺🇸🦅)")
-                    else:
-                        cache_list = [old_host, panel, new_host]
-                        add_cache(chat_id, "AllEditport")
-                        message.reply_text("پورت پنل ؟")
+                    cache_list = [old_host, panel, new_host]
+                    add_cache(chat_id, "AllEditport")
+                    message.reply_text("پورت پنل ؟")
                     add_collector(chat_id, "Editserver", cache_list, [])
                 else:
                     keyboard = [[InlineKeyboardButton("<<", callback_data='SMT')]]
@@ -4067,7 +4057,7 @@ def text_private(bot, message):
                 cache_list.append(link)
                 cache_list.append("path")
                 delete_cache(chat_id)
-                if cache_list[1] == "rocket":
+                if cache_list[1] in ["rocket", "shahan"]:
                     message.reply_text("یه نام برای سرور بفرستین مثل (آمریکا-1 🇺🇸🦅)")
                     cache_list.append("sshport")
                     cache_list.append("udgpw")
@@ -4223,14 +4213,9 @@ def text_private(bot, message):
                 if host not in hosts:
                     delete_cache(chat_id)
                     panel = status.split("AST_")[1]
-                    if panel == "shahan":
-                        cache_list = [panel, host, "80", "path", "sshport", "udgpw"]
-                        add_cache(chat_id, "serverremark")
-                        message.reply_text("یه نام برای سرور بفرستین مثل (آمریکا-1 🇺🇸🦅)")
-                    else:
-                        cache_list = [panel, host]
-                        add_cache(chat_id, "serverport")
-                        message.reply_text("پورت پنل ؟")
+                    cache_list = [panel, host]
+                    add_cache(chat_id, "serverport")
+                    message.reply_text("پورت پنل ؟")
                     add_collector(chat_id, "addserver", cache_list, [])
                 else:
                     message.reply_text("این سرور وجود داره یه سرور دیگه بفرست")
@@ -4243,7 +4228,7 @@ def text_private(bot, message):
                 cache_list.append(link)
                 cache_list.append("path")
                 delete_cache(chat_id)
-                if cache_list[0] == "rocket":
+                if cache_list[0] in ["rocket", "shahan"]:
                     message.reply_text("یه نام برای سرور بفرستین مثل (آمریکا-1 🇺🇸🦅)")
                     cache_list.append("sshport")
                     cache_list.append("udgpw")
