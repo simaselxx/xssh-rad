@@ -302,7 +302,7 @@ def get_protocol_cache(host):
 def Test(r, host, port, panel, status):
     if panel == "shahan":
         protocol = check_panel_protocol(host)
-        s = r.get(f"{protocol}://{host}/p/index.php").text
+        s = r.get(f"{protocol}://{host}:{port}/p/index.php").text
         html = HTMLParser(s)
         for button in html.css('button'):
             if button.attributes.get("name", None) is not None:
@@ -357,7 +357,7 @@ def Login(username, password, host, port, panel):
         r = requests.session()
         if panel == "shahan":
             protocol = check_panel_protocol(host)
-            login_path = f"{protocol}://{host}/p/login.php"
+            login_path = f"{protocol}://{host}:{port}/p/login.php"
             data = {'username': username, 'password': password, "loginsubmit": ""}
 
         elif panel == "xpanel":
