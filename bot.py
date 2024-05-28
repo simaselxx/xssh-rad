@@ -96,20 +96,20 @@ def Seller_Tools_keys():
 def User_Tools_keys():
     keyboard = [
         [InlineKeyboardButton("💰کیف پول", callback_data='UWM')],
-        [InlineKeyboardButton("📦 سرویس های من", callback_data='service')],
-        [InlineKeyboardButton("🆘 آموزش", callback_data='help')]
+        [InlineKeyboardButton("🐍 سرویس های من", callback_data='service')],
+        [InlineKeyboardButton("🔗 آموزش", callback_data='help')]
     ]
     settings = get_settings()
     if settings['buy'] == 'on':
-        keyboard.insert(0, [InlineKeyboardButton("🔄 تمدید", callback_data='upgrade'), InlineKeyboardButton("🛒 خرید", callback_data='buy')])
+        keyboard.insert(0, [InlineKeyboardButton("🔄 تمدید", callback_data='upgrade'), InlineKeyboardButton("🛍 خرید", callback_data='buy')])
     if settings['list_status'] == "on":
         for i in range(len(keyboard)):
             if InlineKeyboardButton("💰کیف پول", callback_data='UWM') in keyboard[i]:
-                keyboard[i].insert(1, InlineKeyboardButton("🏷 تعرفه قیمت ها", callback_data='price'))
+                keyboard[i].insert(1, InlineKeyboardButton("📣 تعرفه قیمت ها", callback_data='price'))
                 break
     if settings['info_service'] == "on":
         for i in range(len(keyboard)):
-            if InlineKeyboardButton("📦 سرویس های من", callback_data='service') in keyboard[i]:
+            if InlineKeyboardButton("🐍 سرویس های من", callback_data='service') in keyboard[i]:
                 keyboard[i].insert(0, InlineKeyboardButton(" اطلاعات سرویس ℹ️", callback_data='config'))
                 break
     if settings['test'] == "on":
@@ -131,7 +131,7 @@ def User_Tools_keys():
         keyboard.append([InlineKeyboardButton("🎁 دریافت هدیه", callback_data='referral')])
     if settings['support_status'] == "on":
         for i in range(len(keyboard)):
-            if InlineKeyboardButton("🆘 آموزش", callback_data='help') in keyboard[i]:
+            if InlineKeyboardButton("🔗 آموزش", callback_data='help') in keyboard[i]:
                 keyboard[i].insert(0, InlineKeyboardButton("👥 پشتیبانی", callback_data='support'))
                 break
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -9784,7 +9784,8 @@ def call_UWM(bot, query):
             USERNAME = "Null"
         add_client_db(chat_id, query.message.chat.first_name, USERNAME, 'None', 0)
     name, u, phone, old_value = get_full_user_data_id(chat_id)
-    text = f"💰 موجودی کیف پول:\n{str(old_value)} تومن "
+    text = f"💰 موجودی کیف پول:\n{str(old_value)} تومن\n\n🆔 شناسه عددی شما: {chat_id}"
+
     keyboard = [
         [InlineKeyboardButton("کد هدیه 🎁", callback_data='UGift'), InlineKeyboardButton("افزایش موجودی➕", callback_data='UWPM')],
         [InlineKeyboardButton("<<", callback_data='back')]
