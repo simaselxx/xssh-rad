@@ -9784,10 +9784,10 @@ def call_UWM(bot, query):
             USERNAME = "Null"
         add_client_db(chat_id, query.message.chat.first_name, USERNAME, 'None', 0)
     name, u, phone, old_value = get_full_user_data_id(chat_id)
-    rtl = '\u202B'
-    ltr = '\u202C'
-    text = (f"💰 موجودی کیف پول:\n{str(old_value)} تومن\n"
-            f"شناسه عددی شما: <code>{str(chat_id)}</code>")
+
+    text = (f"🖥 اطلاعات حساب کاربری شما به شرح زیر میباشد :\n"
+            f"💎 موجودی شما : \n{str(old_value)} تومن\n\n"
+            f"🔢 ایدی عددی شما : <code>{str(chat_id)}</code>")
     keyboard = [
         [InlineKeyboardButton("کد هدیه 🎁", callback_data='UGift'), InlineKeyboardButton("افزایش موجودی➕", callback_data='UWPM')],
         [InlineKeyboardButton("<<", callback_data='back')]
