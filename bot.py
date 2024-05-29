@@ -6827,7 +6827,7 @@ def call_TBP(bot, query):
         cb_pd = "DTPB_" + data
         cb_nx = "NTPB_" + data
         settings = get_settings()
-        keyboard = [[InlineKeyboardButton("🖥 حساب کاربری", callback_data=cb_bl)]]
+        keyboard = [[InlineKeyboardButton("💎 کیف پول", callback_data=cb_bl)]]
         if settings['card_buy'] == "on":
             keyboard.append([InlineKeyboardButton("💳کارت به کارت", callback_data=cb_cc)])
         if settings['trx_buy'] == "on":
@@ -7367,7 +7367,7 @@ def call_Uname(bot, query):
             cb_zp = "ZP_" + data + "?random"
             cb_pd = "PD_" + data + "?random"
             cb_nx = "NX_" + data + "?random"
-            keyboard = [[InlineKeyboardButton("🖥 حساب کاربری", callback_data=cb_bl)]]
+            keyboard = [[InlineKeyboardButton("💎 کیف پول", callback_data=cb_bl)]]
             if check_seller_exist(chat_id) is True:
                 pass
             else:
@@ -7682,7 +7682,7 @@ def call_BU(bot, query):
         cb_pd = "UPIDP_" + data
         cb_nx = "UPNPX_" + data
         settings = get_settings()
-        keyboard = [[InlineKeyboardButton("🖥 حساب کاربری", callback_data=cb_bl)]]
+        keyboard = [[InlineKeyboardButton("💎 کیف پول", callback_data=cb_bl)]]
         if settings['card_buy'] == "on":
             keyboard.append([InlineKeyboardButton("💳کارت به کارت", callback_data=cb_cc)])
         if settings['trx_buy'] == "on":
@@ -9787,7 +9787,7 @@ def call_UWM(bot, query):
 
     text = (f"🖥 اطلاعات حساب کاربری شما به شرح زیر میباشد :\n\n"
             f"💎 موجودی شما : {str(old_value)} تومن\n"
-            f"🔢 ایدی عددی شما :{str(chat_id)}\n\n"
+            f"🔢 ایدی عددی شما : {str(chat_id)}\n\n"
             f"@EGNVPN_BOT")
     keyboard = [
         [InlineKeyboardButton("کد هدیه 🎁", callback_data='UGift'), InlineKeyboardButton("افزایش موجودی➕", callback_data='UWPM')],
