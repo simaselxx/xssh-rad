@@ -9784,7 +9784,7 @@ def call_UWM(bot, query):
             USERNAME = "Null"
         add_client_db(chat_id, query.message.chat.first_name, USERNAME, 'None', 0)
     name, u, phone, old_value = get_full_user_data_id(chat_id)
-    text = f"🆔 شناسه عددی شما: <code>{str(chat_id)}</code>"
+    text = f"🆔 شناسه عددی شما: {str(chat_id)}"
     text = f"💰 موجودی کیف پول:\n{str(old_value)} تومن "
     
     
