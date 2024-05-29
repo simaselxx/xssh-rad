@@ -86,7 +86,7 @@ def Seller_Tools_keys():
         [InlineKeyboardButton("🛠ساخت اکانت", callback_data='Create_none'), InlineKeyboardButton("🗑حذف کاربر", callback_data='remove')],
         [InlineKeyboardButton("🔑تغییر پسورد اکانت", callback_data='ADPASS'), InlineKeyboardButton("🔎 جستجو کاربر ", callback_data='SQerch')],
         [InlineKeyboardButton("📦 اکانت های من", callback_data='service'), InlineKeyboardButton("ℹ️ اطلاعات سرویس", callback_data='config')],
-        [InlineKeyboardButton("🆘 آموزش", callback_data='help'), InlineKeyboardButton("مشخصات من👤, callback_data='UWM')],
+        [InlineKeyboardButton("🆘 آموزش", callback_data='help'), InlineKeyboardButton("💰کیف پول", callback_data='UWM')],
         [InlineKeyboardButton("🟢 کاربران آنلاین", callback_data='SOQUS')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -95,7 +95,7 @@ def Seller_Tools_keys():
 
 def User_Tools_keys():
     keyboard = [
-        [InlineKeyboardButton("مشخصات من👤", callback_data='UWM')],
+        [InlineKeyboardButton("💰کیف پول", callback_data='UWM')],
         [InlineKeyboardButton("🐍 سرویس های من", callback_data='service')],
         [InlineKeyboardButton("🔗 آموزش", callback_data='help')]
     ]
@@ -104,7 +104,7 @@ def User_Tools_keys():
         keyboard.insert(0, [InlineKeyboardButton("🔄 تمدید", callback_data='upgrade'), InlineKeyboardButton("🛍 خرید", callback_data='buy')])
     if settings['list_status'] == "on":
         for i in range(len(keyboard)):
-            if InlineKeyboardButton("مشخصات من👤", callback_data='UWM') in keyboard[i]:
+            if InlineKeyboardButton("💰کیف پول", callback_data='UWM') in keyboard[i]:
                 keyboard[i].insert(1, InlineKeyboardButton("📣 تعرفه قیمت ها", callback_data='price'))
                 break
     if settings['info_service'] == "on":
@@ -1921,10 +1921,10 @@ def text_private(bot, message):
                         cb_pd = "PD_" + data + "?" + link
                         cb_nx = "NX_" + data + "?" + link
                         if check_seller_exist(chat_id) is True:
-                            keyboard = [[InlineKeyboardButton("مشخصات من👤", callback_data=cb_bl)]]
+                            keyboard = [[InlineKeyboardButton("💰کیف پول", callback_data=cb_bl)]]
                         else:
                             settings = get_settings()
-                            keyboard = [[InlineKeyboardButton("مشخصات من👤", callback_data=cb_bl)]]
+                            keyboard = [[InlineKeyboardButton("💰کیف پول", callback_data=cb_bl)]]
                             if settings['card_buy'] == "on":
                                 keyboard.append([InlineKeyboardButton("💳کارت به کارت", callback_data=cb_cc)])
                             if settings['trx_buy'] == "on":
@@ -6827,7 +6827,7 @@ def call_TBP(bot, query):
         cb_pd = "DTPB_" + data
         cb_nx = "NTPB_" + data
         settings = get_settings()
-        keyboard = [[InlineKeyboardButton("مشخصات من👤", callback_data=cb_bl)]]
+        keyboard = [[InlineKeyboardButton("💰کیف پول", callback_data=cb_bl)]]
         if settings['card_buy'] == "on":
             keyboard.append([InlineKeyboardButton("💳کارت به کارت", callback_data=cb_cc)])
         if settings['trx_buy'] == "on":
@@ -7367,7 +7367,7 @@ def call_Uname(bot, query):
             cb_zp = "ZP_" + data + "?random"
             cb_pd = "PD_" + data + "?random"
             cb_nx = "NX_" + data + "?random"
-            keyboard = [[InlineKeyboardButton("مشخصات من👤", callback_data=cb_bl)]]
+            keyboard = [[InlineKeyboardButton("💰کیف پول", callback_data=cb_bl)]]
             if check_seller_exist(chat_id) is True:
                 pass
             else:
@@ -7682,7 +7682,7 @@ def call_BU(bot, query):
         cb_pd = "UPIDP_" + data
         cb_nx = "UPNPX_" + data
         settings = get_settings()
-        keyboard = [[InlineKeyboardButton("مشخصات من👤", callback_data=cb_bl)]]
+        keyboard = [[InlineKeyboardButton("💰کیف پول", callback_data=cb_bl)]]
         if settings['card_buy'] == "on":
             keyboard.append([InlineKeyboardButton("💳کارت به کارت", callback_data=cb_cc)])
         if settings['trx_buy'] == "on":
@@ -8067,7 +8067,7 @@ def call_Confirmed_deposit(bot, query):
             value = new_value + old_value
             update_user_wallet(chat_id, value)
             add_check_admin(query.message.chat.id, query.message.chat.first_name, username_admin, code, "Yes", int(time()))
-            keyboard = [[InlineKeyboardButton("مشخصات من👤", callback_data='UWM')]]
+            keyboard = [[InlineKeyboardButton("💰کیف پول", callback_data='UWM')]]
             reply_markup = InlineKeyboardMarkup(keyboard)
             bot.send_message(chat_id, "کیف پولتون با موفقیت شارژ شد ✔️🥰", reply_markup=reply_markup)
             delete_code_buy(code)
@@ -9786,7 +9786,6 @@ def call_UWM(bot, query):
     name, u, phone, old_value = get_full_user_data_id(chat_id)
     text = f"🆔 شناسه عددی شما: <code>{str(chat_id)}</code>"
     text = f"💰 موجودی کیف پول:\n{str(old_value)} تومن "
-    
     
     
 
