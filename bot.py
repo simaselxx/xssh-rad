@@ -1921,10 +1921,10 @@ def text_private(bot, message):
                         cb_pd = "PD_" + data + "?" + link
                         cb_nx = "NX_" + data + "?" + link
                         if check_seller_exist(chat_id) is True:
-                            keyboard = [[InlineKeyboardButton("🖥 حساب کاربری", callback_data=cb_bl)]]
+                            keyboard = [[InlineKeyboardButton("💎 کیف پول", callback_data=cb_bl)]]
                         else:
                             settings = get_settings()
-                            keyboard = [[InlineKeyboardButton("🖥 حساب کاربری", callback_data=cb_bl)]]
+                            keyboard = [[InlineKeyboardButton("", callback_data=cb_bl)]]
                             if settings['card_buy'] == "on":
                                 keyboard.append([InlineKeyboardButton("💳کارت به کارت", callback_data=cb_cc)])
                             if settings['trx_buy'] == "on":
