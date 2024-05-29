@@ -4329,7 +4329,7 @@ def text_private(bot, message):
 def call_back(bot, query):
     chat_id = query.message.chat.id
     delete_cache(chat_id)
-    text = '🔻<b>خب برگشتیم</b>'
+    text = '🔻<b></b>'
     if chat_id in admin_id:
         text += "\n\n/backup"
         query.edit_message_text(text=text, reply_markup=Admin_Tools_keys(), parse_mode=enums.ParseMode.HTML)
@@ -9788,7 +9788,7 @@ def call_UWM(bot, query):
     text = (f"🖥 اطلاعات حساب کاربری شما به شرح زیر میباشد :\n\n"
             f"💎 موجودی شما : {str(old_value)} تومن\n"
             f"🔢 ایدی عددی شما : {str(chat_id)}\n\n"
-            f"@EGNVPN_BOT")
+            f"@SHAHANNET_bot")
     keyboard = [
         [InlineKeyboardButton("کد هدیه 🎁", callback_data='UGift'), InlineKeyboardButton("افزایش موجودی➕", callback_data='UWPM')],
         [InlineKeyboardButton("<<", callback_data='back')]
