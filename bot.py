@@ -9787,7 +9787,8 @@ def call_UWM(bot, query):
 
     text = (f"🖥 اطلاعات حساب کاربری شما به شرح زیر میباشد :\n\n"
             f"💎 موجودی شما : {str(old_value)} تومن\n"
-            f"🔢 ایدی عددی شما {str(chat_id)}")
+            f"🔢 ایدی عددی شما :{str(chat_id)}"
+            f"@EGNVPN_BOT")
     keyboard = [
         [InlineKeyboardButton("کد هدیه 🎁", callback_data='UGift'), InlineKeyboardButton("افزایش موجودی➕", callback_data='UWPM')],
         [InlineKeyboardButton("<<", callback_data='back')]
